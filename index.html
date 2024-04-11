@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flixy</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/wNi2mVy.png'); /* Replace 'background.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px); /* Adjust blur intensity as needed */
+            z-index: -1; /* Send the background behind other content */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to text for better visibility */
+        }
+
+        .play-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">Flixy  | SITE SOON | SONG NAME Frozy by kompa</div>
+    <audio id="background-audio" loop>
+        <source src="https://raw.githubusercontent.com/XwixyOnhood/Frozy-By-Kompa-/main/y2mate.com%20-%20Frozy%20%20Kompa%20Full%20tiktok%20song.mp3" type="audio/mpeg"> <!-- Replace 'song.mp3' with your song file path -->
+    </audio>
+    <div class="play-button" onclick="toggleAudio()">
+        Play Song
+    </div>
+
+    <script>
+        var audio = document.getElementById('background-audio');
+        var isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+            } else {
+                audio.play();
+                isPlaying = true;
+            }
+        }
+    </script>
+</body>
+</html>
